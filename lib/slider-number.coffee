@@ -27,7 +27,7 @@ module.exports =
             number = parseInt( selection, 10 )
             number = number + num
             editor.insertText("#{number}", {select:true})
-            editor.save()
+
   up: ->
       @change_number(1)
   down: ->
