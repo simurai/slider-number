@@ -12,3 +12,5 @@
   'cmd-down': 'slider-number:down',
   'cmd-shift-up': 'slider-number:big-up',
   'cmd-shift-down': 'slider-number:big-down'
+  'cmd-alt-up': 'slider-number:small-up',
+  'cmd-alt-down': 'slider-number:small-down'

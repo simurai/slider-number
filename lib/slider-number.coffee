@@ -17,6 +17,12 @@ module.exports =
     @subscriptions.add atom.commands.add 'atom-workspace',
       'slider-number:big-up': => @bigup()
 
+    @subscriptions.add atom.commands.add 'atom-workspace',
+      'slider-number:small-down': => @smalldown()
+
+    @subscriptions.add atom.commands.add 'atom-workspace',
+      'slider-number:small-up': => @smallup()
+
   deactivate: ->
     @subscriptions.dispose()
 
@@ -24,8 +30,15 @@ module.exports =
       if editor = atom.workspace.getActiveTextEditor()
          selection = editor.getSelectedText()
          if !isNaN(selection)
-            number = parseInt( selection, 10 )
+            number = parseFloat( selection )
             number = number + num
+
+            # remove decimal if it's: `.0`
+            if number - number.toFixed(0) == 0
+              number = number.toFixed(0)
+            else
+              number = number.toFixed(1)
+
             editor.insertText("#{number}", {select:true})
 
   up: ->
@@ -36,3 +49,7 @@ module.exports =
       @change_number(10)
   bigdown: ->
       @change_number(-10)
+  smallup: ->
+      @change_number(0.1)
+  smalldown: ->
+      @change_number(-0.1)
