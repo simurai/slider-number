@@ -8,7 +8,7 @@
 # For more detailed documentation see
 # https://atom.io/docs/latest/behind-atom-keymaps-in-depth
 'atom-text-editor':
-  'ctrl-shift-up': 'slider-number:up',
-  'ctrl-shift-down': 'slider-number:down',
-  'ctrl-shift-alt-up': 'slider-number:big-up',
-  'ctrl-shift-alt-down': 'slider-number:big-down'
+  'cmd-up': 'slider-number:up',
+  'cmd-down': 'slider-number:down',
+  'cmd-shift-up': 'slider-number:big-up',
+  'cmd-shift-down': 'slider-number:big-down'
